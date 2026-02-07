@@ -1,0 +1,89 @@
+🔹 Introduction
+Description
+Nmap (Network Mapper) is an open-source tool used for network discovery, port scanning, service detection, and security auditing.
+
+Commands
+
+nmap --version
+nmap localhost
+🔹 Networking Basics (IP, CIDR, Host)
+Description
+Understanding IP addresses, CIDR notation, and network ranges is essential for scanning targets correctly.
+
+Commands
+
+ip a
+ifconfig
+nmap 192.168.1.0/24
+
+🔹 Host Discovery (Find Live Hosts)
+Description
+Used to identify which devices are active (host is up) in a network without scanning ports.
+
+Commands
+
+nmap -sn 192.168.1.0/24
+nmap -Pn 192.168.1.10
+
+🔹 Port Scanning
+Description
+Detects open, closed, and filtered ports on a target system.
+
+Commands
+
+sudo nmap -sS 192.168.1.10
+nmap -sT 192.168.1.10
+sudo nmap -sU 192.168.1.10
+nmap -p 22,80,443 192.168.1.10
+nmap -p- 192.168.1.10
+
+🔹 Service & OS Detection
+Description
+Identifies running services, their versions, and the operating system of the target.
+
+Commands
+
+nmap -sV 192.168.1.10
+sudo nmap -O 192.168.1.10
+sudo nmap -A 192.168.1.10
+
+🔹 Timing & Speed Control
+Description
+Controls how fast or slow Nmap sends packets to balance stealth and speed.
+
+Commands
+
+nmap -T0 192.168.1.10
+nmap -T3 192.168.1.10
+nmap -T4 192.168.1.10
+
+🔹 Firewall & IDS Evasion
+Description
+Techniques used to bypass firewalls and intrusion detection systems.
+
+Commands
+
+nmap -f 192.168.1.10
+nmap --spoof-mac random 192.168.1.10
+nmap -D RND:10 192.168.1.10
+
+🔹 Nmap NSE Scripts
+Description
+Nmap Scripting Engine (NSE) automates vulnerability checks and service enumeration.
+
+Commands
+
+nmap -sC 192.168.1.10
+nmap --script vuln 192.168.1.10
+nmap --script smb-vuln* 192.168.1.10
+nmap --script ftp-anon 192.168.1.10
+
+🔹 Output & Reporting
+Description
+Stores scan results for documentation, reporting, and analysis.
+
+Commands
+
+nmap -oN output.txt 192.168.1.10
+nmap -oX output.xml 192.168.1.10
+nmap -oA scan_result 192.168.1.10
